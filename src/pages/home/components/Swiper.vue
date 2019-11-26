@@ -37,10 +37,10 @@
 
 <style lang="stylus" scoped>
   .wrapper >>> .swiper-pagination-bullet-active
-    // background: #fff
-    background: red !important
+    background: #fff
+    // background: red !important    
   .wrapper
-    // overflow: hidden
+    overflow: hidden
     width: 100%
     height: 0
     padding-bottom: 31.25%
