@@ -1,6 +1,6 @@
 <template>
 	<div class="icons">
-		<swiper>
+		<swiper :options="swiperOption">
 			<swiper-slide v-for="(page, index) of pages" :key="index" >
 				<div 
 					class="icon" 
@@ -22,47 +22,57 @@
 <script>
 	export default {
 		name: 'HomeIcons',
+		props: {
+			list: Array
+		},
 		data () {
 			return {
-				iconList: [{
-					id: "0001",
-					imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-					desc: "酒店"
-				}, {
-					id: "0002",
-					imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
-					desc: "机票"
-				}, {
-					id: "0003",
-					imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
-					desc: "度假"
-				}, {
-					id: "0004",
-					imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/package.png",
-					desc: "火车票"
-				}, {
-					id: "0005",
-					imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
-					desc: "景点门票"
-				}, {
-					id: "0006",
-					imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
-					desc: "一日游"
-				}, {
-					id: "0007",
-					imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
-					desc: "机票"
-				}, {
-					id: "0008",
-					imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/train.png",
-					desc: "机票"
-				}]
+				swiperOption: {
+					autoplay: false
+				}
 			}
 		},
+		// data () {
+			// return {
+			// 	iconList: [{
+			// 		id: "0001",
+			// 		imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
+			// 		desc: "酒店"
+			// 	}, {
+			// 		id: "0002",
+			// 		imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
+			// 		desc: "机票"
+			// 	}, {
+			// 		id: "0003",
+			// 		imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
+			// 		desc: "度假"
+			// 	}, {
+			// 		id: "0004",
+			// 		imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/package.png",
+			// 		desc: "火车票"
+			// 	}, {
+			// 		id: "0005",
+			// 		imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
+			// 		desc: "景点门票"
+			// 	}, {
+			// 		id: "0006",
+			// 		imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
+			// 		desc: "一日游"
+			// 	}, {
+			// 		id: "0007",
+			// 		imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
+			// 		desc: "机票"
+			// 	}, {
+			// 		id: "0008",
+			// 		imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/train.png",
+			// 		desc: "机票"
+			// 	}]
+			// }
+		// },
 		computed: {
 			pages (){
 				const pages = []
-				this.iconList.forEach((item, index)=>{
+				this.list.forEach((item, index)=>{
 					const page = Math.floor(index / 8)
 					if (!pages[page]) {
 						pages[page] = []

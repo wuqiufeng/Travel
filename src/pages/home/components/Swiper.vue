@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper">
-		<swiper :options="swiperOption">
-		    <swiper-slide v-for="item of swiperList" :key="item.id">
+		<swiper :options="swiperOption" v-if="showSwiper">
+		    <swiper-slide v-for="item of list" :key="item.id">
 		    	<img class="swiper-img" :src="item.imgUrl" />
 		    </swiper-slide>
 	    	<div class="swiper-pagination"  slot="pagination"></div>
@@ -13,6 +13,9 @@
 <script>
 	export default {
 		name: 'HomeSwiper',
+		props: {
+			list: Array
+		},
 		// data: function() {}
 		data () {
 			return {
@@ -20,17 +23,23 @@
 					pagination: '.swiper-pagination',
 					loop: true
 				},
-				swiperList: [{
-					id: '0001',
-					imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201910/abe3418971067bd655fb2794d6e2eeec.jpg"
-				}, {
-					id: '0002',
+				// swiperList: [{
+				// 	id: '0001',
+				// 	imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201910/abe3418971067bd655fb2794d6e2eeec.jpg"
+				// }, {
+				// 	id: '0002',
 
-					imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20199/76e68eda4ed089c0e5b0ce2367efe428.jpg",
-				}, {
-					id: '0003',
-					imgUrl: "http://imgs.qunarzz.com/vc/de/3d/1c/2ea7755853fef62ce549153026.jpg_92.jpg"
-				}]
+				// 	imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20199/76e68eda4ed089c0e5b0ce2367efe428.jpg",
+				// }, {
+				// 	id: '0003',
+				// 	imgUrl: "http://imgs.qunarzz.com/vc/de/3d/1c/2ea7755853fef62ce549153026.jpg_92.jpg"
+				// }]
+			}
+		},
+
+		computed: {
+			showSwiper () {
+				return this.list.length
 			}
 		}
 	}

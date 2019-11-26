@@ -4,7 +4,7 @@
 			热销推荐
 		</div>
 		<ul>
-			<li class="item border-bottom" v-for="item of recommendList"
+			<li class="item border-bottom" v-for="item of list"
 				:key="item.id"
 			>
 				<div class="item-img-wrapper">
@@ -23,26 +23,29 @@
 <script >
 	export default {
 		name: 'HomeRecommend',
-		data () {
-			return {
-				recommendList: [{
-					id: '0001',
-					imgUrl: 'http://p0.meituan.net/200.0/deal/238c016f8fecdbb6013fa1277ea513b3294950.jpg@331_0_1326_1326a%7C267h_267w_2e_90Q',
-					title: '鑫小城故事',
-					desc: '[13店通用]2-3人餐，提供免费WiFi'
-					}, {
-					id: '0002',
-					imgUrl: 'http://p0.meituan.net/200.0/deal/00e6ee6c9823e7ad7957af2d633b056041236.jpg@63_0_392_392a%7C267h_267w_2e_90Q',
-					title: '鑫小城故事',
-					desc: '[13店通用]2-3人餐，提供免费WiFi'
-					}, {
-					id: '0003',
-					imgUrl: 'http://p0.meituan.net/200.0/deal/00e6ee6c9823e7ad7957af2d633b056041236.jpg@63_0_392_392a%7C267h_267w_2e_90Q',
-					title: '鑫小城故事',
-					desc: '[13店通用]2-3人餐，提供免费WiFi'
-				}]
-			}
+		props: {
+			list: Array
 		},
+		// data () {
+		// 	return {
+		// 		recommendList: [{
+		// 			id: '0001',
+		// 			imgUrl: 'http://p0.meituan.net/200.0/deal/238c016f8fecdbb6013fa1277ea513b3294950.jpg@331_0_1326_1326a%7C267h_267w_2e_90Q',
+		// 			title: '鑫小城故事',
+		// 			desc: '[13店通用]2-3人餐，提供免费WiFi'
+		// 			}, {
+		// 			id: '0002',
+		// 			imgUrl: 'http://p0.meituan.net/200.0/deal/00e6ee6c9823e7ad7957af2d633b056041236.jpg@63_0_392_392a%7C267h_267w_2e_90Q',
+		// 			title: '鑫小城故事',
+		// 			desc: '[13店通用]2-3人餐，提供免费WiFi'
+		// 			}, {
+		// 			id: '0003',
+		// 			imgUrl: 'http://p0.meituan.net/200.0/deal/00e6ee6c9823e7ad7957af2d633b056041236.jpg@63_0_392_392a%7C267h_267w_2e_90Q',
+		// 			title: '鑫小城故事',
+		// 			desc: '[13店通用]2-3人餐，提供免费WiFi'
+		// 		}]
+		// 	}
+		// },
 	}
 	
 </script>
