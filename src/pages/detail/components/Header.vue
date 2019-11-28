@@ -43,13 +43,15 @@
 				} else {
 					this.showAbs = true
 				}
-				// console.log(document.documentElement.scrollTop)
+				console.log(document.documentElement.scrollTop)
 			}
 		},
 		activated () {
+			console.log("activated")
 			window.addEventListener('scroll', this.handleScroll)
 		},
 		deactivated () {
+			console.log("deactivated")
 			window.removeEventListener('scroll', this.handleScroll)
 		}
 	}
