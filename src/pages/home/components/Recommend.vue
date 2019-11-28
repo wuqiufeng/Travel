@@ -4,15 +4,12 @@
 			热销推荐
 		</div>
 		<ul>
-			<!-- <router-link to="/detail"> -->
-
 			<router-link 
 				tag="li" 
-
 				class="item border-bottom" 
 				v-for="item of list"
 				:key="item.id"
-				:to=" '/detail/' + item.id"
+				:to=" '/detail/' + item.id"	
 			>
 				<div class="item-img-wrapper">
 					<img class="item-img" :src="item.imgUrl" />
@@ -23,7 +20,6 @@
 					<button class="item-button">查看详情</button>
 				</div>
 			</router-link>
-			<!-- </router-link> -->
 		</ul>
 	</div>
 </template>
@@ -34,6 +30,11 @@
 		props: {
 			list: Array
 		},
+		// methods: {
+		// 	handleToDetail () {
+		// 		this.$router.push({path:'/list'})
+		// 	}
+		// }
 		// data () {
 		// 	return {
 		// 		recommendList: [{

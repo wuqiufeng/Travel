@@ -18,6 +18,7 @@ import 'styles/border.css'
 
 
 Vue.config.productionTip = false
+// Vue.prototype.$router = router
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
